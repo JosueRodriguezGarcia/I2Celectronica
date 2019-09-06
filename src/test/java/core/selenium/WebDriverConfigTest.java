@@ -9,5 +9,6 @@ public class WebDriverConfigTest {
     @Test
     public void getBrowser() {
         System.out.println(WebDriverConfig.getInstance().getBrowser());
+        System.out.println(WebDriverConfig.getInstance().getProperties());
     }
 }
