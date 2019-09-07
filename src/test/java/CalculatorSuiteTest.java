@@ -1,22 +1,26 @@
 import core.selenium.WebDriverManager;
-import org.junit.*;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import project_name.ui.pages.CalculatorPage;
+import i2celectronica.ui.pages.CalculatorPage;
 
 /**
  * This class is uses for testing the Cacculadora.org page.
+ *
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
 public class CalculatorSuiteTest {
     private static WebDriver driver;
-    CalculatorPage calculator;
+    private CalculatorPage calculator;
 
     /**
      * This method initializes each time that is execute a test.
@@ -24,7 +28,7 @@ public class CalculatorSuiteTest {
     @Before
     public void setUp() {
         driver = WebDriverManager.getInstance().getWebDriver();
-        calculator = new CalculatorPage(driver);
+        calculator = new CalculatorPage(WebDriverManager.getInstance().getWebDriver());
     }
 
     /**
@@ -32,14 +36,17 @@ public class CalculatorSuiteTest {
      */
     @AfterClass
     public static void tearDown() {
-//        driver.findElement(By.linkText("expr")).clear();
         driver.quit();
     }
 
+    /**
+     * Thgis methos is used for clean the display of the calculator.
+     */
     @After
     public void clean() {
         driver.findElement(By.linkText("C")).click();
     }
+
     /**
      * This method testing the operation of addition of two numbers with one digit.
      */
@@ -79,7 +86,7 @@ public class CalculatorSuiteTest {
     }
 
     /**
-     * This method testing the operation of subtraction
+     * This method testing the operation of subtraction.
      */
     @Test
     public void subtraction() {

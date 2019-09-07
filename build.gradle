@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'java-library'
+    id 'checkstyle'
 }
 
 group 'AT-10'
@@ -9,6 +11,10 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+// CheckStyle configuration
+checkstyle {
+    toolVersion = '8.1'
 }
 
 dependencies {

@@ -1,18 +1,32 @@
 package core.selenium;
 
-import core.selenium.webdrivers.Chrome;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class WebDriverManager {
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @author Josue Rodriguez Garcia.
+ * @version 0.0.1
+ */
+public final class WebDriverManager {
     private static WebDriverManager webDriverManager;
     private WebDriver webDriver;
+    private WebDriverWait webDriverWait;
 
-    private WebDriverManager(){
+    /**
+     * this method is used for initializes the variables.
+     */
+    private WebDriverManager() {
         initializes();
 
     }
 
+    /**
+     * This method is used for instantiate the WebDriverManager class.
+     *
+     * @return a webDriverManager.
+     */
     public static WebDriverManager getInstance() {
         if (webDriverManager == null) {
             webDriverManager = new WebDriverManager();
@@ -20,20 +34,24 @@ public class WebDriverManager {
         return webDriverManager;
     }
 
-    private void initializes(){
-        switch (WebDriverConfig.getInstance().getBrowser().toUpperCase()) {
-            case "CHROME":
-                webDriver = new Chrome().initDriver();
-                break;
-
-            default:
-                throw new RuntimeException("no existe ese navagador");
-        }
-        this.webDriver.get("https://www.calculadora.org/");
+    /**
+     * This method mis used for initializes the variables.
+     */
+    private void initializes() {
+        this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
+        this.webDriver.get(WebDriverConfig.getInstance().getUrl());
         this.webDriver.manage().window().maximize();
+        this.webDriver.manage().timeouts().implicitlyWait(WebDriverConfig.getInstance().getImplicitlyWait(),
+                TimeUnit.SECONDS);
+        webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitlWait());
     }
 
-    public WebDriver getWebDriver(){
+    /**
+     * This method is used for get a WebDriver.
+     *
+     * @return a WebDriver.
+     */
+    public WebDriver getWebDriver() {
         return webDriver;
     }
 }

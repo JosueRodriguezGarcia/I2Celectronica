@@ -1,4 +1,5 @@
-package project_name.ui.pages;
+package i2celectronica.ui.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 /**
  * This class implement the logic the test class.
- * @author Josue Rodriguez Garcia
+ *
+ * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
 public class CalculatorPage {
@@ -19,30 +21,33 @@ public class CalculatorPage {
 
     /**
      * This method constructor is use for initialize the attributes.
+     *
      * @param driver The driver parameter defines the input driver.
      */
     public CalculatorPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     /**
      * This method is used fot get a string.
+     *
      * @return a string that represent the result of the calculator.
      */
-    public String getExprDisplay(){
+    public String getExprDisplay() {
         return exprDisplay.getAttribute("value");
     }
 
     /**
-     * This method defines the behavior of element "="
+     * This method defines the behavior of element "=".
      */
-    public void clickEqualButton(){
+    public void clickEqualButton() {
         equalButton.click();
     }
 
     /**
      * This method is used for get the result of the display.
+     *
      * @return a String with th value of display
      */
     public String getValue() {
@@ -51,6 +56,7 @@ public class CalculatorPage {
 
     /**
      * This method is used for solved the operation.
+     *
      * @param operation The operation parameter defines the input operation.
      */
     public void operation(String operation) {
@@ -60,7 +66,7 @@ public class CalculatorPage {
             }
             clickEqualButton();
         } else {
-            throw new IllegalArgumentException("Numerical Expression: "+operation + " is Invalid");
+            throw new IllegalArgumentException("Numerical Expression: " + operation + " is Invalid");
         }
     }
 }
