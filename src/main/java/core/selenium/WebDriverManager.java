@@ -1,18 +1,30 @@
 package core.selenium;
 
-import core.selenium.webdrivers.Chrome;
+import i2celectronica.common.ReadAppProperties;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebDriverManager {
+/**
+ * This class is used for implements the WebDriver class.
+ *
+ * @author Josue Rodriguez Garcia.
+ * @version 0.0.1
+ */
+public final class WebDriverManager {
     private static WebDriverManager webDriverManager;
     private WebDriver webDriver;
 
-    private WebDriverManager(){
+    /**
+     * this method is used for initializes the variables.
+     */
+    private WebDriverManager() {
         initializes();
-
     }
 
+    /**
+     * This method is used for instantiate the WebDriverManager class.
+     *
+     * @return a webDriverManager.
+     */
     public static WebDriverManager getInstance() {
         if (webDriverManager == null) {
             webDriverManager = new WebDriverManager();
@@ -20,20 +32,21 @@ public class WebDriverManager {
         return webDriverManager;
     }
 
-    private void initializes(){
-        switch (WebDriverConfig.getInstance().getBrowser().toUpperCase()) {
-            case "CHROME":
-                webDriver = new Chrome().initDriver();
-                break;
-
-            default:
-                throw new RuntimeException("no existe ese navagador");
-        }
-        this.webDriver.get("https://www.calculadora.org/");
+    /**
+     * This method is used for initializes the variables.
+     */
+    private void initializes() {
+        this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
+        this.webDriver.get(ReadAppProperties.getInstance().getUrlLogin());
         this.webDriver.manage().window().maximize();
     }
 
-    public WebDriver getWebDriver(){
+    /**
+     * This method is used for get a WebDriver.
+     *
+     * @return a WebDriver.
+     */
+    public WebDriver getWebDriver() {
         return webDriver;
     }
 }
