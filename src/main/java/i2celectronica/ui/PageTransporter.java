@@ -43,6 +43,7 @@ public class PageTransporter {
 
     /**
      * This method is used for go to a page.
+     *
      * @param url The parameter url defines a input url.
      */
     public void goToUrl(String url) {
@@ -51,6 +52,7 @@ public class PageTransporter {
 
     /**
      * This method is used for go to a page login.
+     *
      * @return a LoginPage.
      */
     public LoginPage goToUrlLogin() {
