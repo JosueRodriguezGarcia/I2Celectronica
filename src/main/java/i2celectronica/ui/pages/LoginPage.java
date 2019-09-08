@@ -25,7 +25,8 @@ public class LoginPage extends BasePage {
 
     /**
      * This method is used for fill the fields the page login.
-     * @param email The parameter email defines a email.
+     *
+     * @param email  The parameter email defines a email.
      * @param passwd The passwd email defines a password.
      */
     public void login(String email, String passwd) {
@@ -36,6 +37,7 @@ public class LoginPage extends BasePage {
 
     /**
      * This method is used for set the field email on a page.
+     *
      * @param email the email parameter defines a input email.
      */
     public void setEmailField(String email) {
@@ -44,6 +46,7 @@ public class LoginPage extends BasePage {
 
     /**
      * This method is used for set the field password on a page.
+     *
      * @param passwd the email parameter defines a input password.
      */
     public void setPassWdField(String passwd) {
@@ -59,6 +62,7 @@ public class LoginPage extends BasePage {
 
     /**
      * This method get the name of user on account page.
+     *
      * @return a String with name the user.
      */
     public String getAccount() {

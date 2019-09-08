@@ -5,6 +5,7 @@ import java.util.Properties;
 
 /**
  * This class is used for implement the read og the properties file.
+ *
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
@@ -61,6 +62,7 @@ public final class ReadAppProperties {
 
     /**
      * This method is used for get the email of the user.
+     *
      * @param property The parameter properties defines a input string for chose on properties file.
      * @return a string with the email.
      */
