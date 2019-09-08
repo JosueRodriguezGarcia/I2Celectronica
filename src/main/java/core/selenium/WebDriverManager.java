@@ -16,7 +16,6 @@ public final class WebDriverManager {
      */
     private WebDriverManager() {
         initializes();
-
     }
 
     /**

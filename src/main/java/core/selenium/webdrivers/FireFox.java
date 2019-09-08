@@ -15,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class FireFox {
     /**
      * This method is used for configure the Firefox browser.
+     *
      * @return a WebDriver with configuration the Firefox browser.
      */
     public WebDriver initDriver() {

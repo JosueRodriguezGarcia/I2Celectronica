@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Chrome {
     /**
      * This method is used for configure the Chrome browser.
+     *
      * @return a WebDriver with configuration the Chrome browser.
      */
     public WebDriver initDriver() {

@@ -6,7 +6,7 @@ import core.selenium.webdrivers.FireFox;
 import org.openqa.selenium.WebDriver;
 
 /**
- * This class implement the logic for select a browser.
+ * This class implements the logic for select a browser.
  *
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1

@@ -3,13 +3,21 @@ package i2celectronica.common;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class ReadAppProperties {
-    private final String URL_LOGIN = "url_login";
-    private final String PROPERTIES_FILE = "i2celectronica.properties";
+/**
+ * This class is used for implement the read og the properties file.
+ * @author Josue Rodriguez Garcia.
+ * @version 0.0.1
+ */
+public final class ReadAppProperties {
+    private static final String URL_LOGIN = "url_login";
+    private static final String PROPERTIES_FILE = "i2celectronica.properties";
     private static ReadAppProperties readAppProperties;
     private Properties properties;
     private FileInputStream inputStream;
 
+    /**
+     * this method is used for initializes the variables.
+     */
     private ReadAppProperties() {
         properties = readConfigurationFile();
     }
@@ -44,6 +52,7 @@ public class ReadAppProperties {
 
     /**
      * This method is used for get the url of login in page.
+     *
      * @return a string with the email.
      */
     public String getUrlLogin() {
@@ -52,6 +61,7 @@ public class ReadAppProperties {
 
     /**
      * This method is used for get the email of the user.
+     * @param property The parameter properties defines a input string for chose on properties file.
      * @return a string with the email.
      */
     public String getProperty(String property) {

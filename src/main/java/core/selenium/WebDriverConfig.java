@@ -44,7 +44,7 @@ public final class WebDriverConfig {
     }
 
     /**
-     * this method ensure that only one instance is created according to the build pattern.
+     * This method ensure that only one instance is created according to the build pattern.
      *
      * @return an instance of 'WebDriverConfig' type.
      */
