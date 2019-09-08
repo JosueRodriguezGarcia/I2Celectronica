@@ -4,6 +4,8 @@ import i2celectronica.common.ReadAppProperties;
 import org.openqa.selenium.WebDriver;
 
 /**
+ * This class is used for implements the WebDriver class.
+ *
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
