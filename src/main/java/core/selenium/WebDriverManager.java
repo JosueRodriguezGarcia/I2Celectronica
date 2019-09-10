@@ -1,10 +1,9 @@
 package core.selenium;
 
-import i2celectronica.common.ReadAppProperties;
 import org.openqa.selenium.WebDriver;
 
 /**
- * This class is used for implements the WebDriver class.
+ * This class is uses for create a instance of Browser.
  *
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
@@ -37,7 +36,6 @@ public final class WebDriverManager {
      */
     private void initializes() {
         this.webDriver = WebDriverFactory.getWebDriver(WebDriverConfig.getInstance().getBrowser());
-        this.webDriver.get(ReadAppProperties.getInstance().getUrlLogin());
         this.webDriver.manage().window().maximize();
     }
 

@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
  * @version 0.0.1
  */
 public class WebDriverFactory {
-    private static final String BROWSER_IS_NOT_EXIST = "The Browser is not exit";
+    private static final String BROWSER_DOES_NOT_EXIST = "The Browser does not exist";
     private static WebDriver webDriver;
 
     /**
@@ -21,7 +21,7 @@ public class WebDriverFactory {
      * @param browser The browser parameter defines a input Browser
      * @return a webDriver.
      */
-    public static WebDriver getWebDriver(Browsers browser) {
+    public static WebDriver getWebDriver(final Browsers browser) {
 
         switch (browser) {
             case CHROME:
@@ -31,7 +31,7 @@ public class WebDriverFactory {
                 webDriver = new FireFox().initDriver();
                 break;
             default:
-                throw new RuntimeException(BROWSER_IS_NOT_EXIST);
+                throw new RuntimeException(BROWSER_DOES_NOT_EXIST);
         }
         return webDriver;
     }

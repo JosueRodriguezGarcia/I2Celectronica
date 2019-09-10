@@ -1,8 +1,10 @@
 package core.selenium;
 
 import core.selenium.webdrivers.Browsers;
+import core.utils.Log;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -14,7 +16,7 @@ import java.util.Properties;
 public final class WebDriverConfig {
     private static WebDriverConfig webDriverConfig;
     private Properties properties;
-    private FileInputStream inputStream;
+//    private FileInputStream inputStream;
     private static final String BROWSER = "browser";
     private static final String IMPLICITLY_WAIT = "implicitly_wait";
     private static final String EXPLICITLY_WAIT = "explicitly_wait";
@@ -34,11 +36,11 @@ public final class WebDriverConfig {
      */
     private Properties readConfigurationFile() {
         try {
-            inputStream = new FileInputStream("gradle.properties");
+            FileInputStream inputStream = new FileInputStream("gradle.properties");
             properties = new Properties();
             properties.load(inputStream);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            Log.getInstance().getLog().error(e);
         }
         return properties;
     }
@@ -53,15 +55,6 @@ public final class WebDriverConfig {
             webDriverConfig = new WebDriverConfig();
         }
         return webDriverConfig;
-    }
-
-    /**
-     * Gives the properties read from gradle.properties file.
-     *
-     * @return properties.
-     */
-    public Properties getProperties() {
-        return properties;
     }
 
     /**
