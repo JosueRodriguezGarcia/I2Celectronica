@@ -1,6 +1,5 @@
 package runner;
 
-import core.utils.Log;
 import i2celectronica.report.Report;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
