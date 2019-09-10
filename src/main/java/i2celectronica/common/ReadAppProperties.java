@@ -1,6 +1,9 @@
 package i2celectronica.common;
 
+import core.utils.Log;
+
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -33,8 +36,8 @@ public final class ReadAppProperties {
             inputStream = new FileInputStream(PROPERTIES_FILE);
             properties = new Properties();
             properties.load(inputStream);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            Log.getInstance().getLog().error(e);
         }
         return properties;
     }
@@ -66,7 +69,7 @@ public final class ReadAppProperties {
      * @param property The parameter properties defines a input string for chose on properties file.
      * @return a string with the email.
      */
-    public String getProperty(String property) {
+    public String getProperty(final String property) {
         return properties.getProperty(property);
     }
 }

@@ -20,16 +20,13 @@ public class LoginPage extends BasePage {
     @FindBy(css = "#SubmitLogin > span")
     private WebElement submitLoginButton;
 
-    @FindBy(css = ".account > span")
-    private WebElement account;
-
     /**
      * This method is used for fill the fields the page login.
      *
      * @param email  The parameter email defines a email.
      * @param passwd The passwd email defines a password.
      */
-    public void login(String email, String passwd) {
+    public void login(final String email, final String passwd) {
         setEmailField(ReadAppProperties.getInstance().getProperty(email));
         setPassWdField(ReadAppProperties.getInstance().getProperty(passwd));
         clickSubmitLoginButton();
@@ -40,7 +37,7 @@ public class LoginPage extends BasePage {
      *
      * @param email the email parameter defines a input email.
      */
-    public void setEmailField(String email) {
+    private void setEmailField(final String email) {
         emailField.sendKeys(email);
     }
 
@@ -49,30 +46,14 @@ public class LoginPage extends BasePage {
      *
      * @param passwd the email parameter defines a input password.
      */
-    public void setPassWdField(String passwd) {
+    private void setPassWdField(final String passwd) {
         passWdField.sendKeys(passwd);
     }
 
     /**
      * This method is used for click in the button log in.
      */
-    public void clickSubmitLoginButton() {
+    private void clickSubmitLoginButton() {
         submitLoginButton.click();
-    }
-
-    /**
-     * This method get the name of user on account page.
-     *
-     * @return a String with name the user.
-     */
-    public String getAccount() {
-        return account.getText();
-    }
-
-    /**
-     * This method is used for closed the browser.
-     */
-    public void quitWindows() {
-        webDriver.quit();
     }
 }

@@ -20,4 +20,18 @@ public abstract class BasePage {
         this.webDriver = WebDriverManager.getInstance().getWebDriver();
         PageFactory.initElements(webDriver, this);
     }
+
+    /**
+     * This method is used for closed the browser.
+     */
+    public void quitWindows() {
+        webDriver.quit();
+    }
+
+    /**
+     * This method is used for closed the browser.
+     */
+    public void closeWindows() {
+        webDriver.close();
+    }
 }
