@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * ReportI2Celectronica class.
  *
- * @author Limbert Alvaro Vargas Laura.
+ * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
 public class Report {
@@ -32,10 +32,8 @@ public class Report {
         final File reportOutputDirectory = new File("target");
         final List<String> jsonFiles = new ArrayList<>();
         jsonFiles.add("target/cucumber.json");
-
         final String projectName = "I2Celectronica";
         final boolean runWithJenkins = false;
-
         final Configuration configuration = new Configuration(reportOutputDirectory, projectName);
         // additional metadata presented on main page.
         configuration.addClassifications("Platform", "WINDOWS");

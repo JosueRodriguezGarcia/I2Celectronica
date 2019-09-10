@@ -16,7 +16,6 @@ import java.util.Properties;
 public final class WebDriverConfig {
     private static WebDriverConfig webDriverConfig;
     private Properties properties;
-//    private FileInputStream inputStream;
     private static final String BROWSER = "browser";
     private static final String IMPLICITLY_WAIT = "implicitly_wait";
     private static final String EXPLICITLY_WAIT = "explicitly_wait";

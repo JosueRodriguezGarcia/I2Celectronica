@@ -5,14 +5,14 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 /**
- * This class is uses for .
+ * This class is used to generate log.
  *
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
 public final class Log {
     private static final String LOG4J_PROPERTIES = "log4j.properties";
-    private static Log instance = null;
+    private static Log instance;
     private static Logger log = Logger.getLogger(Log.class);
 
     /**

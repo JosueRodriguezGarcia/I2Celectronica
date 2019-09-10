@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * his class is use for implement the account to Page.
+ * This class is use for implement the account to Page.
  *
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1

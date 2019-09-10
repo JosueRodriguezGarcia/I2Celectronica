@@ -38,13 +38,11 @@ public class LoginStepdefs {
     }
 
     /**
-     * This method is uses for do the assertions, and close the page.
+     * This method is used for do the assertions, and close the page.
      */
     @Then("My Account should appear in the title of the page")
     public void usernameShouldAppearInTheLeftPanel() {
         AccountPage accountPage = new AccountPage();
         Assert.assertEquals(accountPage.getTextPageHeading(), "MI CUENTA", "It is not the same Title");
     }
-
-
 }
