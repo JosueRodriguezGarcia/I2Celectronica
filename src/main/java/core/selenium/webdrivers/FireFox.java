@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
-public class FireFox {
+public class FireFox implements IBrowser {
     /**
      * This method is used for configure the Firefox browser.
      *

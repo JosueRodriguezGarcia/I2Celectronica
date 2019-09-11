@@ -1,13 +1,12 @@
 package steps;
 
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
-import i2celectronica.ui.PageTransporter;
 import i2celectronica.ui.pages.AccountPage;
 import i2celectronica.ui.pages.LoginPage;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.testng.Assert;
+
 
 /**
  * This class is used for defines the steps of the scenarios.
@@ -16,15 +15,7 @@ import org.testng.Assert;
  * @version 0.0.1
  */
 public class LoginStepdefs {
-    private LoginPage loginPage;
-
-    /**
-     * This method configure the pre-requirements.
-     */
-    @Given("I go the login page")
-    public void iGoTheLoginPage() {
-        loginPage = PageTransporter.getInstance().goToUrlLogin();
-    }
+    private static LoginPage loginPage = new LoginPage();;
 
     /**
      * This method is used for set the parameter.
@@ -40,9 +31,9 @@ public class LoginStepdefs {
     /**
      * This method is used for do the assertions, and close the page.
      */
-    @Then("My Account should appear in the title of the page")
+    @Then("Greeting the user should appear in the page")
     public void usernameShouldAppearInTheLeftPanel() {
         AccountPage accountPage = new AccountPage();
-        Assert.assertEquals(accountPage.getTextPageHeading(), "MI CUENTA", "It is not the same Title");
+        Assert.assertEquals(accountPage.getTitleHeading(), "Hi, Demo User", "It is not the same Title");
     }
 }
