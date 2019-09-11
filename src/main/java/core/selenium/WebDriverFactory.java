@@ -3,7 +3,16 @@ package core.selenium;
 import core.selenium.webdrivers.Browsers;
 import core.selenium.webdrivers.Chrome;
 import core.selenium.webdrivers.FireFox;
+import core.selenium.webdrivers.IBrowser;
+
 import org.openqa.selenium.WebDriver;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static core.selenium.webdrivers.Browsers.CHROME;
+import static core.selenium.webdrivers.Browsers.FIREFOX;
+
 
 /**
  * This class implements the logic for select a browser.
@@ -12,27 +21,18 @@ import org.openqa.selenium.WebDriver;
  * @version 0.0.1
  */
 public class WebDriverFactory {
-    private static final String BROWSER_DOES_NOT_EXIST = "The Browser does not exist";
-    private static WebDriver webDriver;
-
     /**
      * This method is used for select a Browser.
      *
      * @param browser The browser parameter defines a input Browser
      * @return a webDriver.
      */
-    public static WebDriver getWebDriver(final Browsers browser) {
 
-        switch (browser) {
-            case CHROME:
-                webDriver = new Chrome().initDriver();
-                break;
-            case FIREFOX:
-                webDriver = new FireFox().initDriver();
-                break;
-            default:
-                throw new RuntimeException(BROWSER_DOES_NOT_EXIST);
-        }
-        return webDriver;
+    public static WebDriver getWebDriver(final Browsers browser) {
+        Map<Browsers, IBrowser> map;
+        map = new HashMap<>();
+        map.put(CHROME, new Chrome());
+        map.put(FIREFOX, new FireFox());
+        return map.get(browser).initDriver();
     }
 }

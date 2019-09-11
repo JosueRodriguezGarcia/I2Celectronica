@@ -11,14 +11,15 @@ import org.openqa.selenium.support.FindBy;
  * @version 0.0.1
  */
 public class LoginPage extends BasePage {
-    @FindBy(id = "email")
-    private WebElement emailField;
+    @FindBy(name = "username")
+    private WebElement userNameField;
 
-    @FindBy(id = "passwd")
+    @FindBy(name = "password")
     private WebElement passWdField;
 
-    @FindBy(css = "#SubmitLogin > span")
-    private WebElement submitLoginButton;
+
+    @FindBy(css = ".btn-action")
+    private WebElement loginButton;
 
     /**
      * This method is used for fill the fields the page login.
@@ -29,7 +30,7 @@ public class LoginPage extends BasePage {
     public void login(final String email, final String passwd) {
         setEmailField(ReadAppProperties.getInstance().getProperty(email));
         setPassWdField(ReadAppProperties.getInstance().getProperty(passwd));
-        clickSubmitLoginButton();
+        clickLoginButton();
     }
 
     /**
@@ -38,7 +39,7 @@ public class LoginPage extends BasePage {
      * @param email the email parameter defines a input email.
      */
     private void setEmailField(final String email) {
-        emailField.sendKeys(email);
+        userNameField.sendKeys(email);
     }
 
     /**
@@ -53,7 +54,12 @@ public class LoginPage extends BasePage {
     /**
      * This method is used for click in the button log in.
      */
-    private void clickSubmitLoginButton() {
-        submitLoginButton.click();
+    private void clickLoginButton() {
+        loginButton.click();
+    }
+
+    @Override
+    protected void waitUntilPageObjectIsLoaded() {
+
     }
 }

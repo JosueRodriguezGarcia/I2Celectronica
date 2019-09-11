@@ -57,10 +57,11 @@ public final class ReadAppProperties {
     /**
      * This method is used for get the url of login in page.
      *
+     * @param url The parameter url defines a input url for chose on properties file.
      * @return a string with the email.
      */
-    public String getUrlLogin() {
-        return properties.getProperty(URL_LOGIN);
+    public String getUrl(final String url) {
+        return properties.getProperty(url);
     }
 
     /**

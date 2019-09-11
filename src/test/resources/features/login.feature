@@ -1,5 +1,6 @@
 Feature: Login
-  Scenario: Login as registered user
-    Given I go the login page
+  Scenario:Sign In with valid credential
+    Given I go the "login" page
     When I fill the form with "email" and "password"
-    Then My Account should appear in the title of the page
+    Then Greeting the user should appear in the page
+    

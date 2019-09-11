@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
-public class Chrome {
+public class Chrome implements IBrowser {
     /**
      * This method is used for configure the Chrome browser.
      *
