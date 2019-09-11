@@ -1,6 +1,7 @@
 package i2celectronica;
 
 import core.selenium.WebDriverManager;
+import core.utils.Log;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import org.openqa.selenium.OutputType;
@@ -35,7 +36,8 @@ public class Hooks {
                 byte[] screenshot = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BYTES);
                 scenario.embed(screenshot, "image/png");
             } catch (WebDriverException e) {
-                e.printStackTrace();
+                Log.getInstance().getLog().error(e + " Scenario is Failed");
+                throw new WebDriverException();
             }
         }
     }
