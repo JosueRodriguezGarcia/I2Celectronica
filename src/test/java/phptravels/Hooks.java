@@ -1,4 +1,4 @@
-package i2celectronica;
+package phptravels;
 
 import core.selenium.WebDriverManager;
 import core.utils.Log;

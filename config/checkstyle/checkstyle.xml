@@ -75,7 +75,7 @@
         <module name="LocalVariableName"/>
         <module name="MemberName"/>
         <module name="MethodName"/>
-<!--        <module name="PackageName"/>-->
+        <module name="PackageName"/>
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
         <module name="TypeName"/>
@@ -164,7 +164,7 @@
         <!-- See http://checkstyle.sf.net/config_design.html -->
         <!--<module name="DesignForExtension"/>-->
         <module name="FinalClass"/>
-<!--        <module name="HideUtilityClassConstructor"/>-->
+        <module name="HideUtilityClassConstructor"/>
         <module name="InterfaceIsType"/>
         <module name="VisibilityModifier">
             <property name="protectedAllowed" value="true"/>

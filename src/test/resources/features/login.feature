@@ -2,5 +2,5 @@ Feature: Login
   Scenario:Sign In with valid credential
     Given I go the "login" page
     When I fill the form with "email" and "password"
-    Then Greeting the user should appear in the page
+    Then The Message "Hi, Demo User" is Display on Account Page
     

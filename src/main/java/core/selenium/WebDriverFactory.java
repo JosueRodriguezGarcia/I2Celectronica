@@ -20,7 +20,15 @@ import static core.selenium.webdrivers.Browsers.FIREFOX;
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
-public class WebDriverFactory {
+public final class WebDriverFactory {
+
+    /**
+     * This method is used for initializes the global variables.
+     */
+    private WebDriverFactory() {
+        //There are no global variables to initialize.
+    }
+
     /**
      * This method is used for select a Browser.
      *
@@ -34,5 +42,6 @@ public class WebDriverFactory {
         map.put(CHROME, new Chrome());
         map.put(FIREFOX, new FireFox());
         return map.get(browser).initDriver();
+
     }
 }

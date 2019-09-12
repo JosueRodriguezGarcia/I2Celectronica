@@ -3,8 +3,8 @@ package steps;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-import i2celectronica.ui.pages.AccountPage;
-import i2celectronica.ui.pages.LoginPage;
+import phptravels.ui.pages.AccountPage;
+import phptravels.ui.pages.LoginPage;
 import org.testng.Assert;
 
 
@@ -31,9 +31,9 @@ public class LoginStepdefs {
     /**
      * This method is used for do the assertions, and close the page.
      */
-    @Then("Greeting the user should appear in the page")
-    public void usernameShouldAppearInTheLeftPanel() {
+    @Then("The Message \"([^\"]*)\" is Display on Account Page")
+    public void usernameShouldAppearInTheLeftPanel(String message) {
         AccountPage accountPage = new AccountPage();
-        Assert.assertEquals(accountPage.getTitleHeading(), "Hi, Demo User", "It is not the same Title");
+        Assert.assertEquals(accountPage.getTitleHeading(), message, "It is not the same Title");
     }
 }

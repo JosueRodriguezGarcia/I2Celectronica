@@ -1,6 +1,6 @@
-package i2celectronica.ui.pages;
+package phptravels.ui.pages;
 
-import i2celectronica.common.ReadAppProperties;
+import phptravels.common.ReadAppProperties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

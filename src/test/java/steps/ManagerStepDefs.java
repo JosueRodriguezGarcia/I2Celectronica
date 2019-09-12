@@ -1,7 +1,8 @@
 package steps;
 
 import cucumber.api.java.en.Given;
-import i2celectronica.ui.PageTransporter;
+import cucumber.api.java.en.When;
+import phptravels.ui.PageTransporter;
 
 /**
  * This class is used for defines the steps of the scenarios.
@@ -19,4 +20,5 @@ public class ManagerStepDefs {
     public static void iGoTheLoginPage(final String url) {
         PageTransporter.goToUrl(url);
     }
+
 }

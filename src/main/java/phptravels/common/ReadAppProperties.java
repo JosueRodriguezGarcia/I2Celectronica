@@ -1,4 +1,4 @@
-package i2celectronica.common;
+package phptravels.common;
 
 import core.utils.Log;
 
@@ -14,10 +14,9 @@ import java.util.Properties;
  */
 public final class ReadAppProperties {
     private static final String URL_LOGIN = "url_login";
-    private static final String PROPERTIES_FILE = "i2celectronica.properties";
+    private static final String PROPERTIES_FILE = "phptravels.properties";
     private static ReadAppProperties readAppProperties;
     private Properties properties;
-    private FileInputStream inputStream;
 
     /**
      * this method is used for initializes the variables.
@@ -33,7 +32,7 @@ public final class ReadAppProperties {
      */
     private Properties readConfigurationFile() {
         try {
-            inputStream = new FileInputStream(PROPERTIES_FILE);
+            FileInputStream inputStream = new FileInputStream(PROPERTIES_FILE);
             properties = new Properties();
             properties.load(inputStream);
         } catch (IOException e) {
