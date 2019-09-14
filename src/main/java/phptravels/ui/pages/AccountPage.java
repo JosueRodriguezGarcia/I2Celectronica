@@ -1,4 +1,4 @@
-package i2celectronica.ui.pages;
+package phptravels.ui.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * @version 0.0.1
  */
 public class AccountPage extends BasePage {
-
     @FindBy(css = ".col-md-6 > .RTL")
     private WebElement textTitle;
 
@@ -26,6 +25,64 @@ public class AccountPage extends BasePage {
 
     @FindBy(name = "phone")
     private WebElement phoneField;
+
+    //Your Address
+    @FindBy(name = "address1")
+    private WebElement address1;
+
+    @FindBy(name = "address2")
+    private WebElement address2;
+
+    @FindBy(name = "city")
+    private WebElement city;
+
+    @FindBy(name = "state")
+    private WebElement state;
+
+    @FindBy(name = "zip")
+    private WebElement zip;
+
+    @FindBy(name = "country")
+    private WebElement country;
+
+    @FindBy(css = ".updateprofile")
+    private WebElement submit;
+
+    @FindBy(css = ".alert-success")
+    private WebElement success;
+
+
+    public void fillAddress1Field(final String address){
+        this.address1.clear();
+        this.address1.sendKeys(address);
+    }
+
+    public void fillAddress2Field(final String address){
+        this.address2.clear();
+        this.address2.sendKeys(address);
+    }
+
+    public void fillCityField(final String city){
+        this.city.clear();
+        this.city.sendKeys(city);
+    }
+
+    public void fillStateField(final String state){
+        this.state.clear();
+        this.state.sendKeys(state);
+    }
+    public void fillZipField(final String zip){
+        this.zip.clear();
+        this.zip.sendKeys(zip);
+    }
+
+    public void clickSubmitButton(){
+        this.submit.click();
+    }
+
+    public String getSuccess(){
+        return this.success.getText();
+    }
 
     /**
      * This method do click the my profile button.

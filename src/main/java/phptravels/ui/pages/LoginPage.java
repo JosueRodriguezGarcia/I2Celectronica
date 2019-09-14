@@ -1,6 +1,6 @@
-package i2celectronica.ui.pages;
+package phptravels.ui.pages;
 
-import i2celectronica.common.ReadAppProperties;
+import phptravels.common.ReadAppProperties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -28,8 +28,8 @@ public class LoginPage extends BasePage {
      * @param passwd The passwd email defines a password.
      */
     public void login(final String email, final String passwd) {
-        setEmailField(ReadAppProperties.getInstance().getProperty(email));
-        setPassWdField(ReadAppProperties.getInstance().getProperty(passwd));
+        setEmailField(ReadAppProperties.getInstance().getAppProperties().get(email));
+        setPassWdField(ReadAppProperties.getInstance().getAppProperties().get(passwd));
         clickLoginButton();
     }
 

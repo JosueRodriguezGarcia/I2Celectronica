@@ -43,8 +43,9 @@ public final class WebDriverManager {
         this.webDriver.manage().window().maximize();
         this.webDriver.manage()
                 .timeouts()
-                .implicitlyWait(WebDriverConfig.getInstance().getImplicitlyWait(), TimeUnit.SECONDS);
-        webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitlWait());
+                .implicitlyWait(WebDriverConfig.getInstance().getImplicitlyWaitTime(), TimeUnit.SECONDS);
+        webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitlWaitTime(),
+                WebDriverConfig.getInstance().getSleepWait());
     }
 
     /**
@@ -61,7 +62,7 @@ public final class WebDriverManager {
      *
      * @return a WebDriverWait.
      */
-    public WebDriverWait getWait() {
+    public WebDriverWait getWebDriverWait() {
         return webDriverWait;
     }
 }

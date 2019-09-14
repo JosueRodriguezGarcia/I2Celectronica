@@ -1,10 +1,7 @@
 package core.selenium;
 
+import core.selenium.util.LoadProperties;
 import core.selenium.webdrivers.Browsers;
-import core.utils.Log;
-
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -14,35 +11,20 @@ import java.util.Properties;
  * @version 0.0.1
  */
 public final class WebDriverConfig {
+    private static final String PROPERTIES_FILE = "gradle.properties";
     private static WebDriverConfig webDriverConfig;
     private Properties properties;
     private static final String BROWSER = "browser";
-    private static final String IMPLICITLY_WAIT = "implicitly_wait";
-    private static final String EXPLICITLY_WAIT = "explicitly_wait";
-    private static final String WAIT_SLEEP_TIME = "waitsleeptime";
-    private static final String URL_BASE = "url_base";
+    private static final String IMPLICITLY_WAIT_TIME = "implicitly-wait";
+    private static final String EXPLICITLY_WAIT_TIME = "explicitly-wait";
+    private static final String SLEEP_TIME = "sleep-time";
 
     /**
      * This is constructor for init variables.
      */
     private WebDriverConfig() {
-        properties = readConfigurationFile();
-    }
+        initializes();
 
-    /**
-     * This method reads the file 'gradle.properties' ans return its values through the object 'properties'.
-     *
-     * @return an object 'properties' with wich you can get data from 'gradle.properties'.
-     */
-    private Properties readConfigurationFile() {
-        try {
-            FileInputStream inputStream = new FileInputStream("gradle.properties");
-            properties = new Properties();
-            properties.load(inputStream);
-        } catch (IOException e) {
-            Log.getInstance().getLog().error(e);
-        }
-        return properties;
     }
 
     /**
@@ -55,6 +37,15 @@ public final class WebDriverConfig {
             webDriverConfig = new WebDriverConfig();
         }
         return webDriverConfig;
+    }
+
+    /**
+     * This method reads the file 'gradle.properties' ans return its values through the object 'properties'.
+     *
+     * @return an object 'properties' with wich you can get data from 'gradle.properties'.
+     */
+    private void initializes(){
+        properties = LoadProperties.readFile(PROPERTIES_FILE);
     }
 
     /**
@@ -71,8 +62,8 @@ public final class WebDriverConfig {
      *
      * @return a implicitly wait.
      */
-    public long getImplicitlyWait() {
-        return Long.parseLong(properties.getProperty(IMPLICITLY_WAIT));
+    public long getImplicitlyWaitTime() {
+        return Long.parseLong(properties.getProperty(IMPLICITLY_WAIT_TIME));
     }
 
     /**
@@ -80,8 +71,8 @@ public final class WebDriverConfig {
      *
      * @return a explicitly wait.
      */
-    public long getExplicitlWait() {
-        return Long.parseLong(properties.getProperty(EXPLICITLY_WAIT));
+    public long getExplicitlWaitTime() {
+        return Long.parseLong(properties.getProperty(EXPLICITLY_WAIT_TIME));
     }
 
     /**
@@ -89,16 +80,7 @@ public final class WebDriverConfig {
      *
      * @return a explicitly wait.
      */
-    public long getSleep() {
-        return Long.parseLong(properties.getProperty(WAIT_SLEEP_TIME));
-    }
-
-    /**
-     * Gives the browser properties read from 'gradle.properties'.
-     *
-     * @return the url base.
-     */
-    public String getUrl() {
-        return properties.getProperty(URL_BASE);
+    public long getSleepWait() {
+        return Long.parseLong(properties.getProperty(SLEEP_TIME));
     }
 }

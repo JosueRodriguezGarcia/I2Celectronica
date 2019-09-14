@@ -1,10 +1,11 @@
 package runner;
 
 import core.selenium.WebDriverManager;
-import i2celectronica.report.Report;
-import io.cucumber.testng.AbstractTestNGCucumberTests;
-import io.cucumber.testng.CucumberOptions;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import org.testng.annotations.AfterTest;
+import phptravels.report.Report;
 
 /**
  * RunCukesTest class.
@@ -14,7 +15,7 @@ import org.testng.annotations.AfterTest;
  */
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumber", "json:target/cucumber.json"},
-        glue = {"steps", "i2celectronica"},
+        glue = {"steps", "phptravels"},
         features = {"src/test/resources/features"})
 
 public class RunCukesTest extends AbstractTestNGCucumberTests {

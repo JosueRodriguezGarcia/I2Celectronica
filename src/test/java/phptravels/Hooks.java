@@ -1,9 +1,9 @@
-package i2celectronica;
+package phptravels;
 
 import core.selenium.WebDriverManager;
 import core.utils.Log;
-import io.cucumber.core.api.Scenario;
-import io.cucumber.java.After;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;

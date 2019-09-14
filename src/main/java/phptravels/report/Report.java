@@ -1,4 +1,4 @@
-package i2celectronica.report;
+package phptravels.report;
 
 import core.utils.Log;
 import net.masterthought.cucumber.Configuration;
