@@ -1,6 +1,7 @@
 package phptravels.ui.pages;
 
 import core.StrategySetter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -55,9 +56,6 @@ public class AccountPage extends BasePage {
 
     @FindBy(name = "country")
     private WebElement selectCountry;
-
-    @FindBy(xpath = "//option[.='Bolivia']")
-    private WebElement country;
 
     @FindBy(css = ".updateprofile")
     private WebElement submitButton;
@@ -121,7 +119,7 @@ public class AccountPage extends BasePage {
      * @param country The parameter country defines a input string with country.
      */
     public void selectCountry(final String country) {
-        this.country.click();
+        this.selectCountry.findElement(By.xpath("//option[.='"+country+"']")).click();
     }
 
     /**

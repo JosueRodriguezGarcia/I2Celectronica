@@ -32,6 +32,7 @@ public final class PageTransporter {
      */
     public static void goToUrl(final String url) {
         endpoint.put("login", "login");
+        endpoint.put("login administrator", "admin");
         webDriver = WebDriverManager.getInstance().getWebDriver();
         webDriver.navigate().to(ReadAppProperties.getInstance().getAppProperties().
                 get(URL_BASE).concat(endpoint.get(url)));
