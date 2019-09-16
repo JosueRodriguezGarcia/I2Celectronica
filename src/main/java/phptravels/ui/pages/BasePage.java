@@ -1,4 +1,4 @@
-package i2celectronica.ui.pages;
+package phptravels.ui.pages;
 
 import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +20,7 @@ public abstract class BasePage {
      */
     public BasePage() {
         this.webDriver = WebDriverManager.getInstance().getWebDriver();
-        this.webDriverWait = WebDriverManager.getInstance().getWait();
+        this.webDriverWait = WebDriverManager.getInstance().getWebDriverWait();
         PageFactory.initElements(webDriver, this);
         waitUntilPageObjectIsLoaded();
     }
