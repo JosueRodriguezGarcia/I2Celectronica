@@ -44,8 +44,7 @@ public final class WebDriverManager {
         this.webDriver.manage()
                 .timeouts()
                 .implicitlyWait(WebDriverConfig.getInstance().getImplicitlyWaitTime(), TimeUnit.SECONDS);
-        webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitlWaitTime(),
-                WebDriverConfig.getInstance().getSleepWait());
+        webDriverWait = new WebDriverWait(webDriver, WebDriverConfig.getInstance().getExplicitlWaitTime());
     }
 
     /**

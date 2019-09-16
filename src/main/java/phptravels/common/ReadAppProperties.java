@@ -12,7 +12,7 @@ import java.util.Properties;
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
-public class ReadAppProperties {
+public final class ReadAppProperties {
     private static final String PROPERTIES_FILE = "phptravels.properties";
     private static Map<String, String> mapPropertiesFile;
     private static ReadAppProperties readAppProperties;
@@ -40,7 +40,7 @@ public class ReadAppProperties {
     /**
      * this method is used for initializes the variables.
      */
-    private void initializes(){
+    private void initializes() {
         mapPropertiesFile = new HashMap<>();
         addPhpTravelProperties();
     }
@@ -55,6 +55,7 @@ public class ReadAppProperties {
 
     /**
      * This method is used for get a map with properties.
+     *
      * @return a Map.
      */
     public Map<String, String> getAppProperties() {

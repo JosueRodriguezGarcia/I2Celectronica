@@ -2,6 +2,7 @@ package core.selenium;
 
 import core.selenium.util.LoadProperties;
 import core.selenium.webdrivers.Browsers;
+
 import java.util.Properties;
 
 /**
@@ -41,10 +42,8 @@ public final class WebDriverConfig {
 
     /**
      * This method reads the file 'gradle.properties' ans return its values through the object 'properties'.
-     *
-     * @return an object 'properties' with wich you can get data from 'gradle.properties'.
      */
-    private void initializes(){
+    private void initializes() {
         properties = LoadProperties.readFile(PROPERTIES_FILE);
     }
 

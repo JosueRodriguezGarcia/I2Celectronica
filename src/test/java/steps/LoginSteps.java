@@ -24,7 +24,7 @@ public class LoginSteps {
      * This method is used for set the parameter.
      *
      * @param email  The parameter email defines a emai
-     * @param passwd The passwd email defines a password.
+     * @param passwd The passwd email defines a PASSWORD.
      */
     @When("I fill the form with (.*) and (.*)")
     public void iFillTheFormWithAnd(String email, String passwd) {

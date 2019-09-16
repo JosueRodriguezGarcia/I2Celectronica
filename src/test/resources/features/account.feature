@@ -12,4 +12,5 @@ Feature: Account
       |city    |Cochabamba        |
       |state   |Cochabamba        |
       |zip     |00000             |
+#      |country |Bolivia           |
     Then The Message Profile Updated Successfully. is Display.

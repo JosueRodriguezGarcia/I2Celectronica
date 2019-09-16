@@ -10,8 +10,8 @@ import java.util.Properties;
 /**
  * This class is used for load the properties from a properties file.
  *
+ * @author Josue Rodriguez Garcia.
  * @version 0.0.1
- * @Autor Josue Rodriguez Garcia.
  */
 public class LoadProperties {
     /**

@@ -13,21 +13,27 @@ import java.util.Map;
  * @author Josue Rodriguez Garcia.
  * @version 0.0.1
  */
-public class PageTransporter {
+public final class PageTransporter {
     private static final String URL_BASE = "url-base";
     private static WebDriver webDriver;
-    private static Map<String,String> endpoint = new HashMap<>();
-    private PageTransporter() {
+    private static Map<String, String> endpoint = new HashMap<>();
 
+    /**
+     * This method is the constructor.
+     */
+    private PageTransporter() {
+        //empty
     }
+
     /**
      * This method is used for go to a page.
      *
      * @param url The parameter url defines a input url.
      */
     public static void goToUrl(final String url) {
-        endpoint.put("login","login");
+        endpoint.put("login", "login");
         webDriver = WebDriverManager.getInstance().getWebDriver();
-        webDriver.navigate().to(ReadAppProperties.getInstance().getAppProperties().get(URL_BASE).concat(endpoint.get(url)));
+        webDriver.navigate().to(ReadAppProperties.getInstance().getAppProperties().
+                get(URL_BASE).concat(endpoint.get(url)));
     }
 }
