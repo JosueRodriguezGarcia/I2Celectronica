@@ -12,6 +12,12 @@ import static phptravels.keys.AccountKeys.COUNTRY;
 import static phptravels.keys.AccountKeys.STATE;
 import static phptravels.keys.AccountKeys.ZIP;
 
+/**
+ * Account class.
+ *
+ * @author Josue Rodriguez Garcia.
+ * @version 0.0.1
+ */
 public class Account {
     private String firstName;
     private String lastName;
