@@ -1,10 +1,13 @@
 package phptravels.ui.pages;
 
 import core.StrategySetter;
+import core.selenium.WebDriverConfig;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,7 +60,7 @@ public class AccountPage extends BasePage {
     @FindBy(name = "country")
     private WebElement selectCountry;
 
-    @FindBy(css = "button[class=\"btn btn-action btn-block updateprofile\"]")
+    @FindBy(css = ".updateprofile")
     private WebElement submitButton;
 
     @FindBy(css = ".alert-success")
@@ -126,6 +129,7 @@ public class AccountPage extends BasePage {
      * This method is used for do click on submit button.
      */
     public void clickSubmitButton() {
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView(true);", submitButton);
         this.submitButton.click();
     }
 
