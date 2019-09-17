@@ -3,7 +3,6 @@ package phptravels.ui.pages;
 import phptravels.common.ReadAppProperties;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import phptravels.ui.PageTransporter;
 
 /**
  * This class is use for implement the Login to Page.
@@ -14,37 +13,32 @@ import phptravels.ui.PageTransporter;
 public class LoginPage extends BasePage {
     @FindBy(name = "username")
     private WebElement userNameField;
-
     @FindBy(name = "password")
     private WebElement passWdField;
-
-
     @FindBy(css = ".btn-action")
     private WebElement loginButton;
-
-    @FindBy(css = ".btn-block")
-    private WebElement loginAdminButton;
 
     /**
      * This method is used for fill the fields the page Login.
      *
-     * @param email  The parameter email defines a email.
+     * @param email The parameter email defines a email.
      * @param passwd The passwd email defines a PASSWORD.
      */
     public void login(final String email, final String passwd) {
         setEmailField(ReadAppProperties.getInstance().getAppProperties().get(email));
         setPassWdField(ReadAppProperties.getInstance().getAppProperties().get(passwd));
-        if(getEmailField().contains("admin")){
-
-        }else{
-            clickLoginButton();
-        }
-
+        clickLoginButton();
     }
 
-    private String getEmailField(){
+    /**
+     * This method is used for get the value of email.
+     *
+     * @return a string with the email.
+     */
+    private String getEmailField() {
         return userNameField.getAttribute("value");
     }
+
     /**
      * This method is used for set the field email on a page.
      *
@@ -70,9 +64,6 @@ public class LoginPage extends BasePage {
         loginButton.click();
     }
 
-    private void clickLoginAdminButton(){
-        loginAdminButton.click();
-    }
     @Override
     protected void waitUntilPageObjectIsLoaded() {
 

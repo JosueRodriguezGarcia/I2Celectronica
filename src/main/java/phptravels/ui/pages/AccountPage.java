@@ -57,7 +57,7 @@ public class AccountPage extends BasePage {
     @FindBy(name = "country")
     private WebElement selectCountry;
 
-    @FindBy(css = ".updateprofile")
+    @FindBy(css = "button[class=\"btn btn-action btn-block updateprofile\"]")
     private WebElement submitButton;
 
     @FindBy(css = ".alert-success")
@@ -119,7 +119,7 @@ public class AccountPage extends BasePage {
      * @param country The parameter country defines a input string with country.
      */
     public void selectCountry(final String country) {
-        this.selectCountry.findElement(By.xpath("//option[.='"+country+"']")).click();
+        this.selectCountry.findElement(By.xpath("//option[.='" + country + "']")).click();
     }
 
     /**

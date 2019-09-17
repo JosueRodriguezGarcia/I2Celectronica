@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public abstract class BasePage {
     @FindBy(css = ".nav:nth-child(1) > li:nth-child(1) > .dropdown-toggle")
-    private WebElement body;
+    private WebElement userMenu;
     @FindBy(linkText = "Logout")
     private WebElement logout;
 
@@ -37,6 +37,7 @@ public abstract class BasePage {
      * This method is used for apply the waits.
      */
     protected abstract void waitUntilPageObjectIsLoaded();
+
     /**
      * This method is used for closed the browser.
      */
@@ -51,11 +52,18 @@ public abstract class BasePage {
         webDriver.close();
     }
 
-    public void clickLogout(){
+    /**
+     * This method is used for logout.
+     */
+    public void clickLogout() {
         logout.click();
     }
-    public void clickBody(){
-        body.click();
+
+    /**
+     * This method is used for select user menu.
+     */
+    public void clickUserMenu() {
+        userMenu.click();
     }
 
 }
