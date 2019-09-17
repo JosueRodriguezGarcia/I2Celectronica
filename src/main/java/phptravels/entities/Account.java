@@ -259,7 +259,7 @@ public class Account {
     }
 
     /**
-     * Thi methos is used for set the field with tjeh information of the map.
+     * Thi method is used for set the field with tjeh information of the map.
      *
      * @param accountMap the parameter accountMap defines a input map with the information.
      *

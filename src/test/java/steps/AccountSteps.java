@@ -17,7 +17,7 @@ import java.util.Map;
  */
 public class AccountSteps {
     private AccountPage accountPage = new AccountPage();
-    private Context context;
+    private Context context = new Context();
 
     /**
      * This method is used to go to account page.
@@ -34,7 +34,7 @@ public class AccountSteps {
      */
     @When("I fill the form with new address in account page")
     public void iFillTheFormWithNewAddressInAccountPage(final Map<String, String> dataTable) {
-        //context.getAccount().setInformationAccount(dataTable);
+        context.getAccount().setInformationAccount(dataTable);
         accountPage.setInformationAccount(dataTable);
         accountPage.clickSubmitButton();
     }
