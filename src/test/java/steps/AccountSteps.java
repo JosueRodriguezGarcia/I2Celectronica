@@ -37,7 +37,6 @@ public class AccountSteps {
         context.getAccount().setInformationAccount(dataTable);
         accountPage.setInformationAccount(dataTable);
         accountPage.clickSubmitButton();
-        System.out.println(context);
     }
 
     /**
